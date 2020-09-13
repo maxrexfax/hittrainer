@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-152861097-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-152861097-1');
+</script>
+
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Тренажер</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
+    <script src='js/main.js'></script>
+   
+  </head>
+
+<body>
+   <a href="http://maxbarannyk.ru/">MAIN</a> 
+    <h1>Тренажер</h1>
+    <hr>
+    <div class="main_container">        
+         <div class="grid-container">
+			 <div id="1" class="grid-item">ЛЕВАЯ РУКА</div>
+			 <div id="2" class="grid-item">ПРАВАЯ РУКА</div>
+			 <div id="3" class="grid-item">ЛЕВАЯ НОГА</div>
+			 <div id="4" class="grid-item">ПРАВАЯ НОГА</div>
+		</div> 
+
+    </div>
+
+
+    <div class="mini_container">
+        <div class="centro">
+            <p style="margin:3px;">Количество повторов</p>
+            <input style="margin:3px;" type="text" id="cycles" value="4" size="10"></input>
+            <br>
+            <button style="margin:3px;" class="btn btn-warning" onclick="countdown()">СТАРТ</button>
+        </div>
+    </div>
+
+   <div id="back_shadow"></div>
+
+       <div id="div_popup" class="grid-item">
+           <h2>СТАРТ ТРЕНАЖЕРА ЧЕРЕЗ</h2>
+           <div id="p_container" >
+               <p id="countdownp"></p>
+               <button class="btn btn-danger" type="button" onclick="hidePopUp()">ОТМЕНА</button>
+           </div>
+       </div>
+   <button id="emerg_stop" class="btn btn-danger" onclick="stopWork()">СТОП</button>
+</body>
+
+</html>
