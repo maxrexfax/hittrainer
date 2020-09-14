@@ -5,15 +5,8 @@ async function sleep(msec) {
     return new Promise(resolve => setTimeout(resolve, msec));
 }
 
-async function testSleep() {
-    console.log("Waiting for 1 second...");
-    await sleep(1000);
-    console.log("Waiting done."); // Called 1 second after the first console.log
-}
-
 function startCycles() {	
 	isWorking = true;
-    console.log('START');
     let cyclesF = document.getElementById('cycles').value;
     console.log('Повторов=' + cyclesF);
     document.body.style.background = "lightpink";
@@ -34,20 +27,18 @@ function setTarget(c) {
 
 function finish() {
     document.body.style.background = "white";
-    hideBtn();
+    hideBtnStop();
 }
 
-function hideBtn() {
-    //при снятии коммента код ниже отрабатывает автоматом, потом разберусь
-    //document.getElementById("emerg_stop").style.display = "none";
+function hideBtnStop() {
+    let stopBtn = document.getElementById("emerg_stop");
+    stopBtn.style.display='none';
 }
 
 async function sleepWork(p, item, c) {
         p *= 1000;
-        //alert('sleepWork___   Pause=' + p + '  item=' + item);
         await sleep(p);
     if(isWorking){
-        console.log("Waiting done. Меняю цвет для " + item);
         document.getElementById(item).style.background = "red";
         await sleep(300);
         document.getElementById(item).style.background = "rgba(255, 255, 255, 0.8)";
@@ -75,6 +66,12 @@ function hidePopUp() {
     hideFunction();
 }
 
+function stopPopUp() {
+    myStopFunction();
+    hideFunction();
+    hideBtnStop();
+}
+
 function stopWork(){
     isWorking = false;
     document.getElementById("emerg_stop").style.display = "none";
@@ -86,7 +83,6 @@ function myStopFunction() {
 }
 
 function showFunction() {
-    console.log('function showFunction worked');
     let divShadow = document.getElementById("back_shadow");
     let div_popup = document.getElementById("div_popup");
     divShadow.style.display = "block";
@@ -102,4 +98,6 @@ function hideFunction() {
     divShadow.style.display = "none";
     div_popup.style.opacity = 0;
     div_popup.style.display = "none";
+    let stopBtn = document.getElementById("emerg_stop");
+    stopBtn.style.display=='none';
 }
