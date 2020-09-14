@@ -2,6 +2,10 @@ h1 {
     text-align: center;
 }
 
+#main_url{
+    float: left;
+}
+
 #countdownp{
     font-size: 22px;
     text-align: center;
@@ -24,23 +28,6 @@ h1 {
     margin-right: auto;
     background-color: bisque;
     border: 1px solid gray;
-}
-
-.popup {
-    display: none;
-    position: relative;
-    z-index: 1000;
-    margin: 0 25% 0 25%;
-    width: 50%;
-}
-
-.object {
-    width: 300px;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #eee;
-    padding: 50px 70px;
 }
 
 .centro {
